@@ -1,0 +1,97 @@
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --accent: #d94f30;
+  --done: #555555;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white);
+  background: var(--black);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  border-bottom: 0.1rem solid var(--white);
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+h2 {
+  color: var(--black);
+  background: var(--white);
+  padding: 0.5rem 0.75rem;
+  margin-top: 1rem;
+  position: sticky;
+  top: 0.5rem;
+}
+
+h3 {
+  border-left: 0.1rem solid var(--accent);
+  padding-left: 0.5rem;
+}
+
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.exercise {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--white) 20%, black 80%);
+  padding: 12px;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  text-align: left;
+  width: 100%;
+  font: inherit;
+  color: inherit;
+}
+
+.exercise.completed {
+  background: var(--done);
+}
+
+.exercise-name {
+  font-weight: bold;
+}
+
+.exercise-reps {
+  color: var(--accent);
+  font-weight: bold;
+  text-align: right;
+}
+
+.notes-list li {
+  margin-bottom: 0.5rem;
+}
+
+#reset-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .exercise {
+    grid-template-columns: 1fr;
+    align-items: start;
+    text-align: left;
+  }
+  .exercise-reps {
+    text-align: left;
+  }
+}
