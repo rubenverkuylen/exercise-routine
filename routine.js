@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const exercises = document.querySelectorAll(".exercise");
   const resetButton = document.getElementById("reset-button");
+  let count = 0;
 
   exercises.forEach((exercise) => {
+    count++;
     // Make each exercise div behave like a button for accessibility.
     exercise.setAttribute("role", "button");
-    exercise.setAttribute("tabindex", "0");
+    exercise.setAttribute("tabindex", count);
 
     exercise.addEventListener("click", () => {
       exercise.classList.toggle("completed");
